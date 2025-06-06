@@ -51,7 +51,9 @@ RUN apt-get update && \
  #   && curl -o wkhtmltox.deb -sSL https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-3/wkhtmltox_0.12.6.1-3.jammy_${WKHTMLTOPDF_ARCH}.deb \
     && curl -o wkhtmltox.deb -sSL https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb \
 
-    && echo ${WKHTMLTOPDF_SHA} wkhtmltox.deb | sha1sum -c - \
+ #   && echo ${WKHTMLTOPDF_SHA} wkhtmltox.deb | sha1sum -c - \
+    && echo "2d8ccfa53f2814897e6bca9917c49e6a324c477c  wkhtmltox.deb" | sha1sum -c - \
+    
     && apt-get install -y --no-install-recommends ./wkhtmltox.deb \
     && rm -rf /var/lib/apt/lists/* wkhtmltox.deb
 
