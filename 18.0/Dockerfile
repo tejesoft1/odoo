@@ -1,4 +1,8 @@
 FROM ubuntu:jammy
+
+RUN echo 'Acquire::AllowInsecureRepositories "true";' > /etc/apt/apt.conf.d/99insecure \
+ && apt-get -o Acquire::http::Pipeline-Depth=0 update
+
 MAINTAINER Odoo S.A. <info@odoo.com>
 
 SHELL ["/bin/bash", "-xo", "pipefail", "-c"]
