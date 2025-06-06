@@ -12,7 +12,9 @@ ARG TARGETARCH
 # Install some deps, lessc and less-plugin-clean-css, and wkhtmltopdf
 
 RUN apt-get -o Acquire::http::Pipeline-Depth=0 update && \
-    DEBIAN_FRONTEND=noninteractive \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends curl
+
+RUN DEBIAN_FRONTEND=noninteractive \
     apt-get install -y --no-install-recommends \
         curl \
         ca-certificates \
