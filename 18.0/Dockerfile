@@ -16,7 +16,6 @@ RUN apt-get -o Acquire::http::Pipeline-Depth=0 update && \
 
 RUN DEBIAN_FRONTEND=noninteractive \
     apt-get install -y --no-install-recommends \
-        curl \
         ca-certificates \
         dirmngr \
         fonts-noto-cjk \
