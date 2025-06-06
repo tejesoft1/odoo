@@ -11,7 +11,7 @@ ARG TARGETARCH
 
 # Install some deps, lessc and less-plugin-clean-css, and wkhtmltopdf
 
-RUN apt-get update && \
+RUN apt-get -o Acquire::http::Pipeline-Depth=0 update && \
     DEBIAN_FRONTEND=noninteractive \
     apt-get install -y --no-install-recommends \
         curl \
