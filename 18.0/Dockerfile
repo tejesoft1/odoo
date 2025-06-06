@@ -55,7 +55,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
  #   && curl -o wkhtmltox.deb -sSL https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-3/wkhtmltox_0.12.6.1-3.jammy_${WKHTMLTOPDF_ARCH}.deb \
     && curl -o wkhtmltox.deb -sSL https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb \
  #   && echo ${WKHTMLTOPDF_SHA} wkhtmltox.deb | sha1sum -c - \
-    && echo "da39a3ee5e6b4b0d3255bfef95601890afd80709  wkhtmltox.deb" | sha1sum -c - \    
+    && echo "800eb1c699d07238fee77bf9df1556964f00ffcf  wkhtmltox.deb" | sha1sum -c - \    
     && apt-get install -y --no-install-recommends ./wkhtmltox.deb \
     && rm -rf /var/lib/apt/lists/* wkhtmltox.deb
 
